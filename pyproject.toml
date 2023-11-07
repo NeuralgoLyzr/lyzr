@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lyzr"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["patel <khush@lyzr.ai>"]
 license = "MIT"
@@ -17,6 +17,7 @@ tiktoken = "^0.5.1"
 pdfminer-six = "20221105"
 lancedb = "0.3.3"
 beautifulsoup4 = "4.12.2"
+docx2txt = "0.8" 
 
 
 [build-system]
