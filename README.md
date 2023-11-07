@@ -1,4 +1,4 @@
-# lyzr-stack
+# lyzr
 
 [![PyPI - Version](https://img.shields.io/pypi/v/lyzr-stack.svg)](https://pypi.org/project/lyzr-stack)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/lyzr-stack.svg)](https://pypi.org/project/lyzr-stack)

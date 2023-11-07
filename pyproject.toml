@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lyzr"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["patel <khush@lyzr.ai>"]
 license = "MIT"
