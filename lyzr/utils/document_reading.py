@@ -6,8 +6,9 @@ from llama_index.schema import Document
 from lyzr.utils.pdf_reader import LyzrPDFReader
 from lyzr.utils.docx_reader import LyzrDocxReader
 from lyzr.utils.txt_reader import LyzrTxtReader
+from lyzr.utils.website_reader import LyzrWebsiteReader
+from lyzr.utils.webpage_reader import LyzrWebPageReader
 from llama_index.readers.file.base import SimpleDirectoryReader
-
 
 logger = logging.getLogger(__name__)
 
@@ -93,4 +94,16 @@ def read_txt_as_documents(
     documents = reader.load_data()
 
     logger.info(f"Found {len(documents)} 'documents'.")
+    return documents
+
+
+def read_website_as_documents(url: str) -> List[Document]:
+    reader = LyzrWebsiteReader()
+    documents = reader.load_data(url)
+    return documents
+
+
+def read_webpage_as_documents(url: str) -> List[Document]:
+    reader = LyzrWebPageReader()
+    documents = reader.load_data(url)
     return documents

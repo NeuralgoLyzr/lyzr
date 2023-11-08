@@ -13,7 +13,8 @@
 ## Installation
 
 ```console
-pip install lyzr
+cd dist/
+pip install lyzr-[version]-py3-none-any.whl
 ```
 
 ## License
