@@ -1,17 +1,19 @@
-import openai
-from lyzr import QuestionAnswering
 from pprint import pprint
+
+import openai
+
+from lyzr import QuestionAnswering
 
 openai.api_key = "sk-"
 
-link = "https://www.nelsongp.com/"
+path = ""
 
-rag = QuestionAnswering.from_website(
-    url=link,
+rag = QuestionAnswering.from_docx(
+    input_files=[path],
     llm_params={"model": "gpt-3.5-turbo"},
 )
 
-_query = "what does nelson do?"
+_query = ""
 
 rag = rag.query(_query)
 

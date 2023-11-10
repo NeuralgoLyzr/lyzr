@@ -1,12 +1,14 @@
-import openai
-from lyzr import QuestionAnswering
 from pprint import pprint
+
+import openai
+
+from lyzr import QuestionAnswering
 
 openai.api_key = "sk-"
 
 path = ""
 
-rag = QuestionAnswering.from_pdf(          
+rag = QuestionAnswering.from_txt(
     input_files=[path],
     llm_params={"model": "gpt-3.5-turbo"},
 )

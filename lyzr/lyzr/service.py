@@ -12,14 +12,15 @@ from lyzr.utils.llm_utils import set_default_prompt_template
 
 logger = logging.getLogger(__name__)
 
+
 class LyzrService:
     @staticmethod
     def from_defaults(
-        llm: Optional[LLMType] = "default",
-        embed_model: Optional[EmbedType] = "default",
-        system_prompt: str = None,
-        query_wrapper_prompt: Union[str, BasePromptTemplate] = None,
-        **kwargs,
+            llm: Optional[LLMType] = "default",
+            embed_model: Optional[EmbedType] = "default",
+            system_prompt: str = None,
+            query_wrapper_prompt: Union[str, BasePromptTemplate] = None,
+            **kwargs,
     ) -> ServiceContext:
         if not system_prompt and not query_wrapper_prompt:
             system_prompt, query_wrapper_prompt = set_default_prompt_template()

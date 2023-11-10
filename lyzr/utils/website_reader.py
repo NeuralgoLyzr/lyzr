@@ -1,9 +1,10 @@
 import logging
-import requests
-from tqdm import tqdm
 from typing import List
+
+import requests
 from bs4 import BeautifulSoup
 from llama_index.schema import Document
+from tqdm import tqdm
 
 from lyzr.utils.webpage_reader import LyzrWebPageReader
 
@@ -14,7 +15,8 @@ class LyzrWebsiteReader:
     def __init__(self):
         self.visited_links = set()
 
-    def load_data(self, url: str) -> List[Document]:
+    @staticmethod
+    def load_data(url: str) -> List[Document]:
         reqs = requests.get(url)
         soup = BeautifulSoup(reqs.text, "html.parser")
 

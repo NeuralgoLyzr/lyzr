@@ -1,17 +1,18 @@
-import openai
-from lyzr import QuestionAnswering
 from pprint import pprint
+
+import openai
+
+from lyzr import QuestionAnswering
 
 openai.api_key = "sk-"
 
-link = "https://en.wikipedia.org/wiki/Akinobu_Okada"
+path = ""
 
-rag = QuestionAnswering.from_webpage(
-    url=link,
+rag = QuestionAnswering.from_pdf(
     llm_params={"model": "gpt-3.5-turbo"},
 )
 
-_query = "what does akinobu do?"
+_query = ""
 
 rag = rag.query(_query)
 

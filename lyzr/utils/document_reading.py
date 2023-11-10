@@ -1,14 +1,15 @@
 import logging
 from typing import List, Sequence, Optional
 
+from llama_index.readers.file.base import SimpleDirectoryReader
 from llama_index.schema import Document
 
-from lyzr.utils.pdf_reader import LyzrPDFReader
 from lyzr.utils.docx_reader import LyzrDocxReader
+from lyzr.utils.pdf_reader import LyzrPDFReader
 from lyzr.utils.txt_reader import LyzrTxtReader
-from lyzr.utils.website_reader import LyzrWebsiteReader
 from lyzr.utils.webpage_reader import LyzrWebPageReader
-from llama_index.readers.file.base import SimpleDirectoryReader
+from lyzr.utils.website_reader import LyzrWebsiteReader
+from lyzr.utils.youtube_reader import LyzrYoutubeReader
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +40,6 @@ def read_pdf_as_documents(
 
     logger.info(f"Found {len(documents)} 'documents'.")
     return documents
-
 
 def read_docx_as_documents(
     input_dir: Optional[str] = None,
@@ -106,4 +106,12 @@ def read_website_as_documents(url: str) -> List[Document]:
 def read_webpage_as_documents(url: str) -> List[Document]:
     reader = LyzrWebPageReader()
     documents = reader.load_data(url)
+    return documents
+
+
+def read_youtube_as_documents(
+        urls: List[str] = None,
+) -> List[Document]:
+    reader = LyzrYoutubeReader()
+    documents = reader.load_data(urls)
     return documents

@@ -1,9 +1,10 @@
 from typing import Union, Optional, List
 
 from llama_index.embeddings.utils import EmbedType
-from llama_index.indices.query.base import BaseQueryEngine
+from llama_index.chat_engine.types import BaseChatEngine, ChatMode
 
 from lyzr.lyzr.llm import LyzrLLMFactory
+
 from lyzr.lyzr.service import LyzrService
 from lyzr.lyzr.vector_store import LyzrVectorStoreIndex
 from lyzr.utils.document_reading import (
@@ -16,7 +17,7 @@ from lyzr.utils.document_reading import (
 )
 
 
-def pdf_rag(
+def pdf_chat(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -29,8 +30,8 @@ def pdf_rag(
     llm_params: dict = None,
     vector_store_params: dict = None,
     service_context_params: dict = None,
-    query_engine_params: dict = None,
-) -> BaseQueryEngine:
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_pdf_as_documents(
         input_dir=input_dir,
         input_files=input_files,
@@ -49,7 +50,7 @@ def pdf_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -64,10 +65,10 @@ def pdf_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def txt_rag(
+def txt_chat(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -80,8 +81,8 @@ def txt_rag(
     llm_params: dict = None,
     vector_store_params: dict = None,
     service_context_params: dict = None,
-    query_engine_params: dict = None,
-) -> BaseQueryEngine:
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_txt_as_documents(
         input_dir=input_dir,
         input_files=input_files,
@@ -100,7 +101,7 @@ def txt_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -115,10 +116,10 @@ def txt_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def docx_rag(
+def docx_chat(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -131,8 +132,8 @@ def docx_rag(
     llm_params: dict = None,
     vector_store_params: dict = None,
     service_context_params: dict = None,
-    query_engine_params: dict = None,
-) -> BaseQueryEngine:
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_docx_as_documents(
         input_dir=input_dir,
         input_files=input_files,
@@ -151,7 +152,7 @@ def docx_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -166,10 +167,10 @@ def docx_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def webpage_rag(
+def webpage_chat(
     url: str = None,
     system_prompt: str = None,
     query_wrapper_prompt: str = None,
@@ -177,8 +178,8 @@ def webpage_rag(
     llm_params: dict = None,
     vector_store_params: dict = None,
     service_context_params: dict = None,
-    query_engine_params: dict = None,
-) -> BaseQueryEngine:
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_webpage_as_documents(
         url=url,
     )
@@ -192,7 +193,7 @@ def webpage_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -207,10 +208,10 @@ def webpage_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def website_rag(
+def website_chat(
     url: str = None,
     system_prompt: str = None,
     query_wrapper_prompt: str = None,
@@ -218,8 +219,8 @@ def website_rag(
     llm_params: dict = None,
     vector_store_params: dict = None,
     service_context_params: dict = None,
-    query_engine_params: dict = None,
-) -> BaseQueryEngine:
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_website_as_documents(
         url=url,
     )
@@ -233,7 +234,7 @@ def website_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -248,19 +249,19 @@ def website_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def youtube_rag(
-        urls: List[str] = None,
-        system_prompt: str = None,
-        query_wrapper_prompt: str = None,
-        embed_model: Union[str, EmbedType] = "default",
-        llm_params: dict = None,
-        vector_store_params: dict = None,
-        service_context_params: dict = None,
-        query_engine_params: dict = None,
-) -> BaseQueryEngine:
+def youtube_chat(
+    urls: List[str] = None,
+    system_prompt: str = None,
+    query_wrapper_prompt: str = None,
+    embed_model: Union[str, EmbedType] = "default",
+    llm_params: dict = None,
+    vector_store_params: dict = None,
+    service_context_params: dict = None,
+    chat_engine_params: dict = None,
+) -> BaseChatEngine:
     documents = read_youtube_as_documents(
         urls=urls,
     )
@@ -274,7 +275,7 @@ def youtube_rag(
     service_context_params = (
         {} if service_context_params is None else service_context_params
     )
-    query_engine_params = {} if query_engine_params is None else query_engine_params
+    chat_engine_params = {} if chat_engine_params is None else chat_engine_params
 
     llm = LyzrLLMFactory.from_defaults(**llm_params)
     service_context = LyzrService.from_defaults(
@@ -289,4 +290,4 @@ def youtube_rag(
         **vector_store_params, documents=documents, service_context=service_context
     )
 
-    return vector_store_index.as_query_engine(**query_engine_params)
+    return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)

@@ -48,7 +48,7 @@ def scrape(html: str) -> str:
     return " ".join(text_set)
 
 
-def load_content_using_playwrite(url: str) -> str:
+def load_content_using_playwright(url: str) -> str:
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
@@ -60,7 +60,8 @@ def load_content_using_playwrite(url: str) -> str:
 
 
 class LyzrWebPageReader:
-    def load_data(self, url: str) -> List[Document]:
-        content = load_content_using_playwrite(url)
+    @staticmethod
+    def load_data(url: str) -> List[Document]:
+        content = load_content_using_playwright(url)
         document = Document(text=content, metadata={"url": url})
         return [document]
