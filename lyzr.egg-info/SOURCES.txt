@@ -1,3 +1,4 @@
+LICENSE.txt
 MANIFEST.in
 README.md
 pyproject.toml
@@ -8,11 +9,6 @@ lyzr.egg-info/SOURCES.txt
 lyzr.egg-info/dependency_links.txt
 lyzr.egg-info/requires.txt
 lyzr.egg-info/top_level.txt
-lyzr/analysis/__init__.py
-lyzr/analysis/insights.py
-lyzr/analysis/query_analysis.py
-lyzr/analysis/recommendations.py
-lyzr/analysis/tasks.py
 lyzr/base/__init__.py
 lyzr/base/chatbot.py
 lyzr/base/errors.py
@@ -30,8 +26,13 @@ lyzr/base/prompts/manual_input_pt.txt
 lyzr/base/prompts/query_gen_pt.txt
 lyzr/base/prompts/recommendations_pt.txt
 lyzr/base/prompts/tasks_pt.txt
-lyzr/query_gen/__init__.py
-lyzr/query_gen/analysis_query_generator.py
+lyzr/formula_generator/__init__.py
+lyzr/formula_generator/formula_generator.py
+lyzr/generator/__init__.py
+lyzr/generator/analysis_query_gen.py
+lyzr/generator/get_recommendations.py
+lyzr/generator/get_tasks.py
+lyzr/generator/insights_df.py
 lyzr/utils/__init__.py
 lyzr/utils/chat_utils.py
 lyzr/utils/constants.py

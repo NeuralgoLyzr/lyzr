@@ -3,6 +3,7 @@ from importlib import resources as impresources
 from typing import Optional
 
 import openai
+from openai import OpenAI
 
 from . import prompts
 
@@ -137,7 +138,8 @@ class LLM:
 
         if self.model_type == "openai":
             openai.api_key = self.api_key
-            completion = openai.ChatCompletion.create(
+            client = OpenAI()
+            completion = client.chat.completions.create(
                 model=self.model_name,
                 messages=messages,
                 **params,

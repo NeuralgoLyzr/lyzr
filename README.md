@@ -1,7 +1,11 @@
 # lyzr
 
-[![PyPI - Version](https://img.shields.io/pypi/v/lyzr-stack.svg)](https://pypi.org/project/lyzr-stack)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/lyzr-stack.svg)](https://pypi.org/project/lyzr-stack)
+Lyzr AI is a set of super abstracted LLM SDKs for rapid generative AI application development (RAD) that comes with Lyzr Enterprise Hub – a control center with an AI-only Data Lake and IAM for administering the AI applications built with Lyzr SDKs. Available both as open-source and enterprise SDKs.
+
+Lyzr SDKs helps you build all your favorite GenAI SaaS products as enterprise applications in minutes. It is the enterprise alternative to popular in-demand Generative AI SaaS products like Mendable, PDF.ai, Chatbase.co, SiteGPT.ai, Julius.ai and more.
+
+[![PyPI - Version](https://img.shields.io/pypi/v/lyzr.svg)](https://pypi.org/project/lyzr)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/lyzr.svg)](https://pypi.org/project/lyzr)
 
 -----
 
