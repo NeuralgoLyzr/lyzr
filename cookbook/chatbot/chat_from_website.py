@@ -2,17 +2,18 @@ from pprint import pprint
 
 import openai
 
-from lyzr import Chat
+from lyzr import ChatBot
 
 openai.api_key = "sk-"
 
-path = ""
+link = "https://www.nelsongp.com/"
 
-rag = Chat.from_pdf(
+rag = ChatBot.website_chat(
+    url=link,
     llm_params={"model": "gpt-3.5-turbo"},
 )
 
-_query = ""
+_query = "what does nelson do?"
 
 rag = rag.chat(_query)
 

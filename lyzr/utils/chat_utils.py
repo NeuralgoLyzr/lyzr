@@ -3,10 +3,10 @@ from typing import Union, Optional, List
 from llama_index.embeddings.utils import EmbedType
 from llama_index.chat_engine.types import BaseChatEngine, ChatMode
 
-from lyzr.lyzr.llm import LyzrLLMFactory
+from lyzr.base.llm import LyzrLLMFactory
 
-from lyzr.lyzr.service import LyzrService
-from lyzr.lyzr.vector_store import LyzrVectorStoreIndex
+from lyzr.base.service import LyzrService
+from lyzr.base.vector_store import LyzrVectorStoreIndex
 from lyzr.utils.document_reading import (
     read_pdf_as_documents,
     read_docx_as_documents,
@@ -17,7 +17,7 @@ from lyzr.utils.document_reading import (
 )
 
 
-def pdf_chat(
+def pdf_chat_(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -68,7 +68,7 @@ def pdf_chat(
     return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def txt_chat(
+def txt_chat_(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -119,7 +119,7 @@ def txt_chat(
     return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def docx_chat(
+def docx_chat_(
     input_dir: Optional[str] = None,
     input_files: Optional[List] = None,
     exclude_hidden: bool = True,
@@ -170,7 +170,7 @@ def docx_chat(
     return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def webpage_chat(
+def webpage_chat_(
     url: str = None,
     system_prompt: str = None,
     query_wrapper_prompt: str = None,
@@ -211,7 +211,7 @@ def webpage_chat(
     return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def website_chat(
+def website_chat_(
     url: str = None,
     system_prompt: str = None,
     query_wrapper_prompt: str = None,
@@ -252,7 +252,7 @@ def website_chat(
     return vector_store_index.as_chat_engine(**chat_engine_params, chat_mode=ChatMode.CONTEXT)
 
 
-def youtube_chat(
+def youtube_chat_(
     urls: List[str] = None,
     system_prompt: str = None,
     query_wrapper_prompt: str = None,

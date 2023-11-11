@@ -2,13 +2,13 @@ from pprint import pprint
 
 import openai
 
-from lyzr import QuestionAnswering
+from lyzr import QABot
 
 openai.api_key = "sk-"
 
 path = ""
 
-rag = QuestionAnswering.from_pdf(
+rag = QABot.pdf_qa(
     llm_params={"model": "gpt-3.5-turbo"},
 )
 

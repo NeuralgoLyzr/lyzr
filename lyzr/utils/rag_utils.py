@@ -3,9 +3,9 @@ from typing import Union, Optional, List
 from llama_index.embeddings.utils import EmbedType
 from llama_index.indices.query.base import BaseQueryEngine
 
-from lyzr.lyzr.llm import LyzrLLMFactory
-from lyzr.lyzr.service import LyzrService
-from lyzr.lyzr.vector_store import LyzrVectorStoreIndex
+from lyzr.base.llm import LyzrLLMFactory
+from lyzr.base.service import LyzrService
+from lyzr.base.vector_store import LyzrVectorStoreIndex
 from lyzr.utils.document_reading import (
     read_pdf_as_documents,
     read_docx_as_documents,

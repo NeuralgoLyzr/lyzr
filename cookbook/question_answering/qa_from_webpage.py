@@ -2,7 +2,7 @@ from pprint import pprint
 
 import openai
 
-from lyzr import Chat
+from lyzr import QABot
 
 openai.api_key = "sk-"
 
@@ -12,7 +12,7 @@ nest_asyncio.apply()
 
 link = "https://archlinux.org/"
 
-rag = Chat.from_website(
+rag = QABot.website_qa(
     url=link,
     llm_params={"model": "gpt-3.5-turbo"},
     embed_model=""
@@ -20,6 +20,6 @@ rag = Chat.from_website(
 
 _query = "what does akinobu do?"
 
-rag = rag.chat(_query)
+rag = rag.query(_query)
 
 pprint(rag.response)

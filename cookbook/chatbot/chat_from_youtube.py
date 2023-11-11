@@ -1,14 +1,12 @@
-from pprint import pprint
-
 import openai
-
-from lyzr import Chat
+from lyzr import ChatBot
+from pprint import pprint
 
 openai.api_key = "sk-"
 
 link = ["https://www.youtube.com/watch?v=fcfVjd_oV1I"]
 
-chatbot = Chat.from_youtube(
+chatbot = ChatBot.youtube_chat(
     urls=link,
     llm_params={"model": "gpt-3.5-turbo"},
 )
@@ -22,3 +20,6 @@ pprint(response.response)
 _query = "what did i asked above?"
 response = chatbot.chat(_query)
 pprint(response.response)
+
+
+#%%
