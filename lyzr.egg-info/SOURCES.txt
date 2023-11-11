@@ -1,3 +1,4 @@
+MANIFEST.in
 README.md
 pyproject.toml
 setup.py
@@ -21,6 +22,14 @@ lyzr/base/llms.py
 lyzr/base/qa_bot.py
 lyzr/base/service.py
 lyzr/base/vector_store.py
+lyzr/base/prompts/analysis_pt.txt
+lyzr/base/prompts/dataset_description_pt.txt
+lyzr/base/prompts/insights_pt.txt
+lyzr/base/prompts/make_analysis_query_pt.txt
+lyzr/base/prompts/manual_input_pt.txt
+lyzr/base/prompts/query_gen_pt.txt
+lyzr/base/prompts/recommendations_pt.txt
+lyzr/base/prompts/tasks_pt.txt
 lyzr/query_gen/__init__.py
 lyzr/query_gen/analysis_query_generator.py
 lyzr/utils/__init__.py
