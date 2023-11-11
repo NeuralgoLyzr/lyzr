@@ -3,8 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="lyzr",
     version="0.1.5",
-    author="patel",
-    author_email="khush@lyzr.ai",
+    author="lyzr",
     description="",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

@@ -4,7 +4,7 @@ Lyzr AI is a set of super abstracted LLM SDKs for rapid generative AI applicatio
 
 Lyzr SDKs helps you build all your favorite GenAI SaaS products as enterprise applications in minutes. It is the enterprise alternative to popular in-demand Generative AI SaaS products like Mendable, PDF.ai, Chatbase.co, SiteGPT.ai, Julius.ai and more.
 
-[![PyPI - Version](https://img.shields.io/pypi/v/lyzr.svg)](https://pypi.org/project/lyzr)
+[![PyPI - Version](https://img.shields.io/pypi/v/lyzr.svg)](https://pypi.org/project/lyzr/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/lyzr.svg)](https://pypi.org/project/lyzr)
 
 -----

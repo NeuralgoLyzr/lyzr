@@ -1,7 +1,6 @@
 LICENSE.txt
 MANIFEST.in
 README.md
-pyproject.toml
 setup.py
 lyzr/__init__.py
 lyzr.egg-info/PKG-INFO
