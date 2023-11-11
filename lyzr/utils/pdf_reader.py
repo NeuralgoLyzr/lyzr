@@ -4,6 +4,7 @@ from langchain.document_loaders import PDFMinerLoader
 from llama_index.readers.base import BaseReader
 from llama_index.schema import Document
 
+
 class LyzrPDFReader(BaseReader):
     def __init__(self) -> None:
       None

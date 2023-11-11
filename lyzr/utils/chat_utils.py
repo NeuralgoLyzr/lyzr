@@ -1,10 +1,9 @@
 from typing import Union, Optional, List
 
-from llama_index.embeddings.utils import EmbedType
 from llama_index.chat_engine.types import BaseChatEngine, ChatMode
+from llama_index.embeddings.utils import EmbedType
 
 from lyzr.base.llm import LyzrLLMFactory
-
 from lyzr.base.service import LyzrService
 from lyzr.base.vector_store import LyzrVectorStoreIndex
 from lyzr.utils.document_reading import (
