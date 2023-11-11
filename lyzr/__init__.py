@@ -14,6 +14,7 @@ from lyzr.base.llm import LyzrLLMFactory
 from lyzr.base.qa_bot import QABot
 from lyzr.base.service import LyzrService
 from lyzr.base.vector_store import LyzrVectorStoreIndex
+from lyzr.formula_generator import FormulaGen
 
 __all__ = [
     "LyzrLLMFactory",
@@ -30,4 +31,5 @@ __all__ = [
     "describe_dataset",
     "recommendations",
     "ai_queries_df",
+    "FormulaGen",
 ]
