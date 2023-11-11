@@ -8,12 +8,10 @@ openai.api_key = "sk-"
 
 path = ""
 
-rag = QABot.pdf_qa(
+qa_bot = QABot.pdf_qa(
+    input_files=[path],
     llm_params={"model": "gpt-3.5-turbo"},
 )
-
 _query = ""
-
-rag = rag.query(_query)
-
-pprint(rag.response)
+res = qa_bot.query(_query)
+print(res.response)

@@ -1,10 +1,4 @@
-from pprint import pprint
-
-import openai
-
 from lyzr import QABot
-
-openai.api_key = "sk-"
 
 link = ["https://www.youtube.com/watch?v=fcfVjd_oV1I"]
 
@@ -17,8 +11,7 @@ _query = "what does googler do?"
 
 response = rag.query(_query)
 
-pprint(response.response)
 
 _query = "what did i asked above?"
 response = rag.query(_query)
-pprint(response.response)
+print(response)
