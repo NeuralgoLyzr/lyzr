@@ -9,7 +9,7 @@ from lyzr.base.file_utils import read_file, describe_dataset
 from lyzr.base.llms import LLM, Prompt, get_model
 
 
-def get_analysis_queries(
+def ai_queries_df(
     model: Optional[LLM] = None,
     model_name: Optional[str] = None,
     model_type: Optional[str] = None,
