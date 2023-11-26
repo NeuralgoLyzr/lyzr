@@ -1,3 +1,5 @@
+**Note**: This repository is now archived. Visit [this GitHub link](https://github.com/LyzrCore/lyzr) for the current Lyzr package repository.
+
 # lyzr
 
 Lyzr AI is a set of super abstracted LLM SDKs for rapid generative AI application development (RAD) that comes with Lyzr Enterprise Hub – a control center with an AI-only Data Lake and IAM for administering the AI applications built with Lyzr SDKs. Available both as open-source and enterprise SDKs.
